@@ -211,11 +211,14 @@
         <section class="about-text">
           <h3 class="h3 service-title">Master Thesis: A bio-inspired method for autonomous navigation using models from the insect brain.</h3>
           <p>
-            The aim for this project was to serve as an example for how
+            In this project I combined a model for the optic lobes of the fruit fly (Drosopphila melanogaster) with a model for the Central Complex of the sweat bee (Megalopta genalis). The optic lobes provide visual processing, while the Central Complex keeps track of the heading. Thus, combining these two models could serve as a bio inspired approach for visual navigation. I implemented this in a mobile robot, both in a real robot and in Simulation.
+
+            The animation below shows a test case in a simulated environment. The robot is placed in a square hall, with high contrast walls. The three veiws shown below are the camera inputs that the mobile robot sees (two cameras pointing left and right at a 45 degree angle from the center line, and a camera in the center showing you what the robot sees straight ahead).
+            Initially the robot is placed in the center of the square hall and pushed forward in a random direction (the red path shown). Then we allow the signal from the central complex to take over the steering of the robot, which leads it back to where it started (blue path).
           </p>
 
           <figure class="avatar-box">
-            <img src="./assets/images/fly brain robot.gif" alt="fruitfly" style="max-width: 200%; height: auto; display: block;">
+            <img src="./assets/images/fly brain robot.gif" alt="fruitfly" style="width: 300px; height: auto; display: block;">
           </figure>
 
           <p>
