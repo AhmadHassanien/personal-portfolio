@@ -5,1023 +5,335 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>vCard - Personal Portfolio</title>
+  <title>Ahmad Hassanien | Neurorobotics Portfolio</title>
 
-  <!--
-    - favicon
-  -->
+  <!-- Favicon -->
   <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
 
-  <!--
-    - custom css link
-  -->
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
-  <!--
-    - google font link
-  -->
+  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* === Responsive Enhancements === */
+
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      background-color: #fdfdfd;
+      color: #222;
+    }
+
+    main {
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      flex: 0 0 300px;
+      background: #1e1e1e;
+      color: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .sidebar-info {
+      text-align: center;
+    }
+
+    .sidebar-info img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .info-content h1 {
+      font-size: 1.4rem;
+      margin: 5px 0;
+    }
+
+    .title {
+      font-weight: 300;
+      color: #ccc;
+    }
+
+    /* Sidebar toggle for mobile */
+    .info_more-btn {
+      display: none;
+      margin: 15px auto;
+      background: #444;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* Main Content */
+    .main-content {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    nav.navbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .navbar-link {
+      background: #eee;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .navbar-link:hover,
+    .navbar-link.active {
+      background: #0078ff;
+      color: #fff;
+    }
+
+    article {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    article img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    h2.article-title {
+      border-bottom: 2px solid #0078ff;
+      display: inline-block;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      margin-top: 30px;
+    }
+
+    .form-input, textarea {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .form-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: #0078ff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* === Responsive Layout === */
+    @media (max-width: 992px) {
+      main {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        flex: none;
+        align-items: center;
+        text-align: center;
+      }
+
+      .info_more-btn {
+        display: inline-block;
+      }
+
+      .main-content {
+        padding: 15px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav.navbar {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .navbar-link {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      h1.name {
+        font-size: 1.2rem;
+      }
+
+      h2.article-title {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <!--
-    - #MAIN
-  -->
-
   <main>
 
-    <!--
-      - #SIDEBAR
-    
-    -->
-
+    <!-- Sidebar -->
     <aside class="sidebar" data-sidebar>
-
       <div class="sidebar-info">
-
         <figure class="avatar-box">
-          <img src="./assets/images/my-avatar2.jpg" alt="Richard hanrick" width="80">
+          <img src="./assets/images/my-avatar2.jpg" alt="Ahmad Hassanien">
         </figure>
 
         <div class="info-content">
-          <h1 class="name" title="Richard hanrick">Ahmad Hassanien</h1>
-
+          <h1 class="name">Ahmad Hassanien</h1>
           <p class="title">Neurorobotics</p>
         </div>
 
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-
+        <button class="info_more-btn" data-sidebar-btn>Show Contacts</button>
       </div>
 
       <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
         <ul class="contacts-list">
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <a href="mailto:ahmadhamdycc@gmail.com" class="contact-link">ahmadhamdycc@gmail.com</a>
-            </div>
-
+          <li>
+            <ion-icon name="mail-outline"></ion-icon>
+            <a href="mailto:ahmadhamdycc@gmail.com">ahmadhamdycc@gmail.com</a>
           </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Born</p>
-
-              <time datetime="1982-06-23">February, 1998</time>
-            </div>
-
+          <li>
+            <ion-icon name="calendar-outline"></ion-icon> February, 1998
           </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>Chemnitz, Germany</address>
-            </div>
-
+          <li>
+            <ion-icon name="location-outline"></ion-icon> Chemnitz, Germany
           </li>
-
         </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-        </ul>
-
       </div>
-
     </aside>
 
-
-
-
-
-    <!--
-      - #main-content
-    -->
-
+    <!-- Main Content -->
     <div class="main-content">
 
-      <!--
-        - #NAVBAR
-      -->
-
       <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
-
-
-          <li class="navbar-item">
-            <a href="./assets/images/EN.pdf" download="EN.pdf">
-              <button class="navbar-link" data-nav-link>Resume (English)</button>
-            </a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="./assets/images/DE.pdf" download="DE.pdf">
-            <button class="navbar-link" data-nav-link>Resume (Deutsch)</button>
-            </a>
-          </li>
-
-
-          <li class="navbar-item">
-            <a href="./assets/images/thesis.pdf" download="Thesis.pdf">
-            <button class="navbar-link" data-nav-link>Master Thesis</button>
-            </a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="./assets/images/thesis.pdf" download="BachelorThesis.pdf">
-            <button class="navbar-link" data-nav-link>Bachelor Thesis</button>
-            </a>
-          </li>
-        
-        </ul>
-
+        <button class="navbar-link active" data-nav-link>About</button>
+        <a href="./assets/images/EN.pdf" download><button class="navbar-link">Resume (EN)</button></a>
+        <a href="./assets/images/DE.pdf" download><button class="navbar-link">Resume (DE)</button></a>
+        <a href="./assets/images/thesis.pdf" download><button class="navbar-link">Master Thesis</button></a>
       </nav>
 
-
-
-      <!--
-        - #BLOG
-      -->
-
-      <article class="blog" data-page="blog">
-
+      <!-- About Section -->
+      <article class="about active" data-page="about">
         <header>
-          <h2 class="h2 article-title">Blog</h2>
+          <h2 class="h2 article-title">About Me</h2>
         </header>
 
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
-
-                  <p class="blog-text">
-                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
-
-                  <p class="blog-text">
-                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #80</h3>
-
-                  <p class="blog-text">
-                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
-
-                  <p class="blog-text">
-                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
-
-                  <p class="blog-text">
-                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #79</h3>
-
-                  <p class="blog-text">
-                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
         <p>
-          <br> <br>   
-          <br> <br>  
-           
+          I am a recent Master Graduate in Neurorobotics from TU Chemnitz, Germany. Previously I studied Mechatronics at
+          the German University in Cairo. My interests lie mainly in robotics and AI.
         </p>
         <header>
-          <h2 class="h2 article-title">
-            About me</h2>
+          <h2 class="h2 article-title">My Projects</h2>
         </header>
-        <section class="about-text">
-        <p>
-            I am a recent Master Graduate of Neurorobotics from TU Chemnitz, Germany. Previousely I studied Mechatronics at the German University in Cairo.
-            My interestes are mainly in robotics and AI.
-        </p>
+
+        <section>
+          <h3>Master Thesis: A Bio-inspired Method for Autonomous Navigation</h3>
+          <p>
+            Combined models from the insect brain for navigation. Implemented both in simulation and on a real robot.
+          </p>
+          <img src="./assets/images/fly brain robot.gif" alt="Bio-inspired robot">
+        </section>
+
+        <section>
+          <h3>Artificial Voxel-Based Worm Using Spiking Neurons</h3>
+          <img src="./assets/images/worm.gif" alt="Voxel worm simulation">
+        </section>
+
+        <section>
+          <h3>Building a Mobile Robot from Scratch</h3>
+          <img src="./assets/images/mobile robot.jpg" alt="Mobile robot build">
+        </section>
+
+        <section>
+          <h3>Lane Keeping with Sparse Recurrent Neural Network</h3>
+          <img src="./assets/images/Behavioral clonning rnn car.gif" alt="Autonomous driving RNN">
+        </section>
+
+        <section>
+          <h3>Model Predictive Controller for Quadrotor Fault Tolerance</h3>
+          <img src="./assets/images/drone.gif" alt="Drone simulation">
+        </section>
+
+        <section>
+          <h3>ROS Controlled Mobile Robot</h3>
+          <p>Built and programmed a ROS2 robot with IMU and encoder fusion.</p>
+        </section>
+
+        <section>
+          <h3>Bachelor Thesis: Particle Filter for Hand Tracking in Virtual Orchestra</h3>
+          <p>Developed a particle filter for gesture-controlled virtual orchestra device.</p>
         </section>
 
         <header>
-          <h2 class="h2 article-title">My Projects </h2>
+          <h2 class="h2 article-title">Education</h2>
         </header>
 
-        <section class="about-text">
-          <h3 class="h3 service-title">Master Thesis: A bio-inspired method for autonomous navigation using models from the insect brain</h3>
-          <p>
-            In this project I combined a model for the optic lobes of the fruit fly (Drosopphila melanogaster) with a model for the Central Complex of the sweat bee (Megalopta genalis). The optic lobes provide visual processing, while the Central Complex keeps track of the heading. Thus, combining these two models could serve as a bio inspired approach for visual navigation. I implemented this in a mobile robot, both in a real robot and in Simulation.
-
-            The animation below shows a test case in a simulated environment. The robot is placed in a square hall, with high contrast walls. The three veiws shown below are the camera inputs that the mobile robot sees (two cameras pointing left and right at a 45 degree angle from the center line, and a camera in the center showing you what the robot sees straight ahead).
-            Initially the robot is placed in the center of the square hall and pushed forward in a random direction (the red path shown). Then we allow the signal from the central complex to take over the steering of the robot, which leads it back to where it started (blue path).
-          </p>
-
-          <img src="./assets/images/fly brain robot.gif" alt="fruitfly" style="width: 400px; height: auto; display: block; margin-left: auto; margin-right: auto; background-color: transparent;">
-          <p>
-               
-          </p>
-
-          <h3 class="h3 service-title">An artificial voxel based worm with contractions generated by a spiking neuron model</h3>
-
-          <p>
-            Spiking neuron models are able to more closely match biologicial neurons in their output signal. Networks built from spiking neurons, called Spiking Neural Networks (SNNs), have alot of advantages over traditional Artificial Neural Networks (ANNs) in terms of increased efficiency in energy consumption.
-            A basic model for a spiking neuron is the izhikevich neuron, which can generate spikes in various patterns depending on how it's parameters are tuned.
-            I implemented this model to generate the contractions in a simple voxel worm, shown above. Each square unit is an artificial muscle unit that can contract and relax. By generate syncronized contractions, you can get this simple artifical creature to move in certain ways, or react when given a stimuli.
-            This serves as a basic example of how robots built with bio-inspired approaches can start to mimic the behavior of living organisms.
-          </p>
-          <img src="./assets/images/worm.gif" alt="mobile robot" style="width: 400px; height: auto; display: block; margin-left: auto; margin-right: auto; background-color: transparent;">
-
-          
-          <p>
-               
-          </p>
-
-          <h3 class="h3 service-title">Building a mobile robot from scratch</h3>
-
-          <p>
-              A mobile robot I built from scratch, with the goal of being used in the Master thesis project above. Later I changed the wheel configuration and added two cameras in the front to serve as the visual input to the optic lobe model.
-          </p>
-          <img src="./assets/images/mobile robot.jpg" alt="mobile robot" style="width: 400px; height: auto; display: block; margin-left: auto; margin-right: auto; background-color: transparent;">
-          
-          <p>
-               
-          </p>
-
-          <h3 class="h3 service-title">An end-to end trained sparse recurrent neural network to achieve lane keeping </h3>
-          <p>
-            In this project I replicated the results from Mathias Lechner's paper where they developed a system similar to Nvidia's Dave2 using convolutional neural networks (CNNs) to achieve lane keeping in an autonomous car. The difference in Mathais's approach is the introduction of new neuron units inspired from the C. Elegans worm, which results in a much sparser network while retaining performance.
-            As a learning challenge I replicated their results in simulation, for this I used Udacity's simulator from their autonomous driving course.
-          </p>
-
-          <img src="./assets/images/Behavioral clonning rnn car.gif" alt="car" style="width: 400px; height: auto; display: block; margin-left: auto; margin-right: auto; background-color: transparent;">
-
-           <p>
-               
-          </p>
-
-          <h3 class="h3 service-title">Writing a model predictive controller to achieve fault tolerance in a quadrotor</h3>
-          <p>
-            In this project I wrote the code for a model predictive controller to control a quadrotor. In the animation below, two of the four rotors are disabled, which leads to a loss of yaw control (the quadrotor will start spinnning around itself). However, the position and elevation of the quadrotor are still controllable by the MPC, thus the drone can still take off and land safely in the case of a motor failure (or even two).
-          </p>
-
-          <img src="./assets/images/drone.gif" alt="car" style="width: 400px; height: auto; display: block; margin-left: auto; margin-right: auto; background-color: transparent;">
-           <p>
-               
-          </p>
-
-          <h3 class="h3 service-title">ROS Controlled mobile robot</h3>
-          <p>
-            In this project I built another mobile robot from scratch, powered by a Raspberry Pi 3 running ROS2 and performing trajectory planning. Sensor fusion was done with a Kalman Filter where I used the wheel encoders as well as the IMU to estimate the position of the robot.
-          </p>
-           <p>
-               
-          </p>
-
-          <h3 class="h3 service-title">Bachelor thesis: Implemented a particle filter to estimate the elevation of a hand in a virtual orchestra device</h3>
-          <p>
-            In this project at Hochschule Heilbronn I implemented a particle filter to estimate the elevation of a user's hand. The virtual orchestra device had a screen playing a pre-recorded orchestra with a micro radar sensor placed under the hand of the user. As the user would wave his hand, the orchestra video would be sped up or slowed down to match the tempo of the hand. My contribution to the project was to implement a particle filter for estimating the position of the hand and syncing up the video with the correct tempo and down beat.
-          </p>
-
-        </section>
-
-                <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Education</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Chemnitz University of Technology, Germany</h4>
-
-              <span>2021 — 2025</span>
-
-              <p class="timeline-text">
-                Completed my studies in Neurorobotics (Masters). For more information on what my study course was about, see the course's flyer (German): https://www.tu-chemnitz.de/studierendenservice/zsb/studiengaenge/flyer/neurorobotik_master.pdf
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Hochschule Heilbronn, Germany</h4>
-
-              <span>2020 one semester</span>
-
-              <p class="timeline-text">
-                Did my bachelor thesis there during an exchange semester.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">German University in Cairo, Egypt</h4>
-
-              <span>2016 - 2021</span>
-
-              <p class="timeline-text">
-                Completed my studies in Mechatronics (Bachelor).
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-
-        <!--
-          - service
-        -->
-
-
+        <ul>
+          <li><b>TU Chemnitz (2021–2025)</b> – Master in Neurorobotics</li>
+          <li><b>Hochschule Heilbronn (2020)</b> – Exchange semester for Bachelor thesis</li>
+          <li><b>German University in Cairo (2016–2021)</b> – Bachelor in Mechatronics</li>
+        </ul>
       </article>
 
-      <!--
-        - #RESUME
-      -->
-
-      <article class="resume" data-page="resume">
-
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Education</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Chemnitz University of Technology</h4>
-
-              <span>2021 — 2025</span>
-
-              <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">New york academy of art</h4>
-
-              <span>2006 — 2007</span>
-
-              <p class="timeline-text">
-                Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus, omnis voluptas assumenda est
-                omnis..
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">High school of art and design</h4>
-
-              <span>2002 — 2004</span>
-
-              <p class="timeline-text">
-                Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur
-                magni dolores
-                eos.
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Experience</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Creative director</h4>
-
-              <span>2015 — Present</span>
-
-              <p class="timeline-text">
-                Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos dolores et qvuas
-                molestias
-                exceptur.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Art director</h4>
-
-              <span>2013 — 2015</span>
-
-              <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Web designer</h4>
-
-              <span>2010 — 2013</span>
-
-              <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <section class="skill">
-
-          <h3 class="h3 skills-title">My skills</h3>
-
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Web design</h5>
-                <data value="80">80%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Graphic design</h5>
-                <data value="70">70%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Branding</h5>
-                <data value="90">90%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">WordPress</h5>
-                <data value="50">50%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 50%;"></div>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #PORTFOLIO
-      -->
-
-      <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Projects</h2>
-        </header>
-
-        <section class="projects">
-
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web design</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Applications</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web development</button>
-            </li>
-
-          </ul>
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web design</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Applications</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web development</button>
-              </li>
-
-            </ul>
-
-          </div>
-
-          <ul class="project-list">
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Finance</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Orizon</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Fundo</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Brawlhalla</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
-                </figure>
-
-                <h3 class="project-title">DSM.</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">MetaSpark</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Summary</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Task Manager</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Arrival</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-
-
-
-
-      <!--
-        - #CONTACT
-      -->
-
+      <!-- Contact Section -->
       <article class="contact" data-page="contact">
-
         <header>
           <h2 class="h2 article-title">Contact</h2>
         </header>
 
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
-              width="400" height="300" loading="lazy"></iframe>
-          </figure>
-        </section>
-
         <section class="contact-form">
-
-          <h3 class="h3 form-title">Contact Form</h3>
-
-          <form action="#" class="form" data-form>
-
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
-
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <button class="form-btn" type="submit" disabled data-form-btn>
+          <form>
+            <input type="text" name="fullname" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button class="form-btn" type="submit">
               <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
+              Send Message
             </button>
-
           </form>
-
         </section>
-
       </article>
 
     </div>
-
   </main>
 
-
-
-
-
-
-  <!--
-    - custom js link
-  -->
   <script src="./assets/js/script.js"></script>
-
-  <!--
-    - ionicon link
-  -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
