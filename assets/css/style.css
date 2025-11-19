@@ -135,9 +135,9 @@ button {
   font: inherit;
   background: none;
   border: none;
-  text-align: left;
+  text-align: center;
   cursor: pointer;
-  color:blue;
+  color:var(--orange-yellow-crayola);
 }
 
 input, textarea {
